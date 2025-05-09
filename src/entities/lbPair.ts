@@ -56,7 +56,7 @@ export function createLBPair(
   lbPair.block = block.number
 
   // generate Bin
-  trackBin(
+  const bin = trackBin(
     lbPair,
     initialize.activeId,
     BIG_DECIMAL_ZERO,
@@ -67,6 +67,8 @@ export function createLBPair(
     BIG_INT_ZERO,
   )
 
+  lbPair.tokenXPrice = bin.priceX
+  lbPair.tokenYPrice = bin.priceY
   lbPair.save()
 
   return lbPair as LBPair
