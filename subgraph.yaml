@@ -5,6 +5,9 @@ schema:
   file: ./schema.graphql
 features:
   - grafting
+graft:
+  base: Qmde3xgWr3tbYDqyVFs4hY5Yv1neMqZGQJEDMzu7ZCX7ZP
+  block: 50428090
 dataSources:
   - kind: ethereum/contract
     name: PoolManager

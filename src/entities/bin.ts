@@ -79,6 +79,11 @@ export function trackBins(
     fromBinId = toBinId
     toBinId = tmp
   }
+  if (toBinId - fromBinId > 31) {
+    for (let i = fromBinId; i <= toBinId; i += 32) {
+      trackBins(lbPair, i, i + 31 < toBinId ? i + 31 : toBinId, tokenXDecimals, tokenYDecimals)
+    }
+  }
   const calls = new Array<ethereum.Tuple>(toBinId - fromBinId + 1)
   for (let i = 0; i < calls.length; i++) {
     calls[i] = changetype<ethereum.Tuple>([
