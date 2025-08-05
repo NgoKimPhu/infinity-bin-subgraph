@@ -3,19 +3,14 @@ description: PancakSwap Infinity Bin subgraph
 repository: https://github.com/NgoKimPhu/infinity-bin-subgraph
 schema:
   file: ./schema.graphql
-features:
-  - grafting
-graft:
-  base: QmduZmEF1NgUYmAEuRjjePuceQUuXxCxrccha6Ytz2b7jR
-  block: 54075275
 dataSources:
   - kind: ethereum/contract
     name: PoolManager
-    network: bsc
+    network: base
     source:
       abi: PoolManager
       address: "0xC697d2898e0D09264376196696c51D7aBbbAA4a9"
-      startBlock: 47571312
+      startBlock: 32978631
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.7
